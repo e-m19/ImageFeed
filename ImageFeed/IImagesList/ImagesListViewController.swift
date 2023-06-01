@@ -51,7 +51,7 @@ extension ImagesListViewController {
         cell.cellLabel.text = dateFormatter.string(from: Date())
         
         let isLiked = indexPath.row % 2 == 0
-        let likeImage = isLiked ? UIImage(named: "likeButtonOn") : UIImage(named: "LikeButtonOff")
+        let likeImage = isLiked ? UIImage(named: "likeButtonOn") : UIImage(named: "likeButtonOff")
         cell.cellButton.setImage(likeImage, for: .normal)
     }
 }
