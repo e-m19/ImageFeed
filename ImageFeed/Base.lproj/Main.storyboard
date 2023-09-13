@@ -151,23 +151,23 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-hm-U9W">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="0_full_size" translatesAutoresizingMaskIntoConstraints="NO" id="ytU-OD-jy4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_full_size" translatesAutoresizingMaskIntoConstraints="NO" id="ytU-OD-jy4">
+                                        <rect key="frame" x="-403.66666666666669" y="0.0" width="1200.3333333333333" height="795"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ytU-OD-jy4" secondAttribute="trailing" id="fQt-Bu-9YW"/>
-                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="leading" secondItem="4kq-hm-U9W" secondAttribute="leading" id="mDF-Vm-Xig"/>
-                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="top" secondItem="zEG-dU-YsN" secondAttribute="top" id="pt4-jn-n1P"/>
-                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="top" secondItem="OmI-Iw-u9b" secondAttribute="bottom" id="zm0-h4-oig"/>
+                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="centerX" secondItem="4kq-hm-U9W" secondAttribute="centerX" id="G8s-PZ-ZRJ"/>
+                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="trailing" secondItem="4kq-hm-U9W" secondAttribute="trailing" id="fQt-Bu-9YW"/>
+                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="top" secondItem="4kq-hm-U9W" secondAttribute="top" id="pt4-jn-n1P"/>
+                                    <constraint firstItem="ytU-OD-jy4" firstAttribute="bottom" secondItem="4kq-hm-U9W" secondAttribute="bottom" id="zm0-h4-oig"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="OmI-Iw-u9b"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="zEG-dU-YsN"/>
                                 <connections>
-                                    <outlet property="delegate" destination="7OL-Qu-10t" id="X47-7a-uai"/>
+                                    <outlet property="delegate" destination="7OL-Qu-10t" id="Zhb-CF-awT"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-cz-6U4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-cz-6U4" userLabel="Back Button">
                                 <rect key="frame" x="15" y="116" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Xqd-jw-Dwh"/>
@@ -179,40 +179,43 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapBackButton" destination="7OL-Qu-10t" eventType="touchUpInside" id="zb8-hV-lKv"/>
+                                    <action selector="didTapBackButton:" destination="7OL-Qu-10t" eventType="touchUpInside" id="6d8-KS-vkS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-bl-BzO" userLabel="Share Button">
-                                <rect key="frame" x="159" y="711" width="75" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-bl-BzO" userLabel="Share Button">
+                                <rect key="frame" x="171.66666666666666" y="711" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="KYd-2z-kai"/>
+                                    <constraint firstAttribute="width" constant="50" id="KYd-2z-kai"/>
                                     <constraint firstAttribute="height" constant="50" id="iTi-E3-uod"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="shareButton"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="shareButton">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="shareButton:" destination="7OL-Qu-10t" eventType="touchUpInside" id="gmR-NY-TLD"/>
+                                    <action selector="didTapShareButton:" destination="7OL-Qu-10t" eventType="touchUpInside" id="jQg-wT-nOz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HEA-UZ-5G2"/>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4kq-hm-U9W" firstAttribute="leading" secondItem="T3X-su-hCC" secondAttribute="leading" id="1Td-PJ-NM5"/>
-                            <constraint firstItem="hIe-bl-BzO" firstAttribute="centerX" secondItem="4kq-hm-U9W" secondAttribute="centerX" id="5Wf-3B-THc"/>
-                            <constraint firstItem="hIe-bl-BzO" firstAttribute="leading" secondItem="HEA-UZ-5G2" secondAttribute="leading" constant="159" id="Aya-qm-ItH"/>
-                            <constraint firstItem="4kq-hm-U9W" firstAttribute="top" secondItem="T3X-su-hCC" secondAttribute="top" id="KE9-Ue-T9E"/>
-                            <constraint firstAttribute="trailing" secondItem="4kq-hm-U9W" secondAttribute="trailing" id="MPx-fd-MSM"/>
+                            <constraint firstItem="hIe-bl-BzO" firstAttribute="centerX" secondItem="T3X-su-hCC" secondAttribute="centerX" id="5Wf-3B-THc"/>
+                            <constraint firstItem="4kq-hm-U9W" firstAttribute="centerX" secondItem="hIe-bl-BzO" secondAttribute="centerX" id="5lp-Ym-Hah"/>
                             <constraint firstItem="oTs-cz-6U4" firstAttribute="top" secondItem="HEA-UZ-5G2" secondAttribute="top" constant="57" id="PCw-vV-x9C"/>
-                            <constraint firstAttribute="bottom" secondItem="4kq-hm-U9W" secondAttribute="bottom" id="Zg9-St-F1F"/>
                             <constraint firstItem="oTs-cz-6U4" firstAttribute="leading" secondItem="HEA-UZ-5G2" secondAttribute="leading" constant="15" id="bSt-qw-Cac"/>
+                            <constraint firstItem="4kq-hm-U9W" firstAttribute="leading" secondItem="HEA-UZ-5G2" secondAttribute="leading" id="lE9-Ec-e07"/>
                             <constraint firstItem="hIe-bl-BzO" firstAttribute="top" secondItem="T3X-su-hCC" secondAttribute="top" constant="711" id="s8V-oy-N83"/>
+                            <constraint firstItem="4kq-hm-U9W" firstAttribute="centerY" secondItem="T3X-su-hCC" secondAttribute="centerY" id="tAE-hc-Zkn"/>
+                            <constraint firstItem="4kq-hm-U9W" firstAttribute="top" secondItem="T3X-su-hCC" secondAttribute="topMargin" constant="-59" id="zcd-78-KWq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tfQ-2B-cwz"/>
                     <connections>
-                        <outlet property="scrollView" destination="4kq-hm-U9W" id="I1a-A3-LgC"/>
-                        <outlet property="singleImageView" destination="ytU-OD-jy4" id="Pwx-eJ-ZxI"/>
+                        <outlet property="backButton" destination="oTs-cz-6U4" id="tng-mz-3hO"/>
+                        <outlet property="imageView" destination="ytU-OD-jy4" id="0F2-xo-QP9"/>
+                        <outlet property="scrollView" destination="4kq-hm-U9W" id="dqh-Cw-ao6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCJ-Sv-25S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
