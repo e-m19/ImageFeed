@@ -5,38 +5,41 @@
 //  Created by Елена Михайлова on 15.06.2023.
 //
 
+
 import UIKit
 
 final class SingleImageViewController: UIViewController {
-    var image: UIImage? {
+    
+    var image: UIImage! {
         didSet {
             guard isViewLoaded else { return }
-            guard (image != nil) else { return }
-            singleImageView.image = image
-            rescaleAndCenterImageInScrollView(image: image!)
+            imageView.image = image
+            rescaleAndCenterImageInScrollView(image: image)
         }
     }
     
-    @IBOutlet var singleImageView: UIImageView!
-    @IBAction func shareButton(_ sender: Any) {
-        let share = UIActivityViewController(
-            activityItems: [image],
-            applicationActivities: nil
-        )
-        present(share, animated: true, completion: nil)
-    }
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBAction private func didTapBackButton() {
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBAction func didTapBackButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func didTapShareButton(_ sender: Any) {
+        let items = [image]
+        let aVC = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        present(aVC, animated: true)
+            }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.maximumZoomScale = 1.25
+        imageView.image = image
         scrollView.minimumZoomScale = 0.1
-        guard (image != nil) else { return }
-        singleImageView.image = image
-        rescaleAndCenterImageInScrollView(image: image!)
+        scrollView.maximumZoomScale = 3
+        guard let image = image else { return }
+        rescaleAndCenterImageInScrollView(image: image)
     }
     
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
@@ -59,6 +62,6 @@ final class SingleImageViewController: UIViewController {
 
 extension SingleImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        singleImageView
+        imageView
     }
 }

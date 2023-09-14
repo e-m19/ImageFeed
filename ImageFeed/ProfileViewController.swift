@@ -24,7 +24,12 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setUpConstraints()
-        updateView(withImage: UIImage(named: "profileImage"), name: "Екатерина Новикова", profileAddress: "@ekaterina_nov", text: "Hello, world!", button: UIButton())
+        updateView(
+            withImage: UIImage(named: "profileImage"),
+            name: "Екатерина Новикова",
+            profileAddress: "@ekaterina_nov",
+            text: "Hello, world!",
+            button: UIButton())
     }
     
     func setUpView() {
